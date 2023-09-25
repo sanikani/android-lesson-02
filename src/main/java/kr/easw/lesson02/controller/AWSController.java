@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/rest/aws")
-public class AWSConroller {
+public class AWSController {
     private final AWSService awsController;
 
     @PostMapping("/auth")
@@ -51,21 +51,4 @@ public class AWSConroller {
     public ResponseEntity<byte[]> download(@RequestParam String filename) throws IOException {
         return awsController.getObject(filename);
     }
-
-
-
-
-
-
-//    @PostMapping("/download")
-//    private ModelAndView onDownload(@RequestParam String fileName) {
-//        try {
-//
-//
-//
-//        } catch (Throwable e) {
-//            return new ModelAndView("redirect:/server-error?errorStatus=" + e.getMessage());
-//        }
-//    }
-
 }
